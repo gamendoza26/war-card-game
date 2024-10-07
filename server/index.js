@@ -55,16 +55,16 @@ app.post('/api/flip', (req, res) => {
     let result = '';
     if (playerCard.value > computerCard.value) {
       result = 'You win this round!';
-      playerDeck.push(playerCard);
-      playerDeck.push(computerCard);
+      playerDeck.unshift(playerCard);
+      playerDeck.unshift(computerCard);
     } else if (playerCard.value < computerCard.value) {
       result = 'Computer wins this round!';
-      computerDeck.push(playerCard);
-      computerDeck.push(computerCard);
+      computerDeck.unshift(playerCard);
+      computerDeck.unshift(computerCard);
     } else {
       result = 'It’s a tie! War!';
-      playerDeck.push(playerCard);
-      computerDeck.push(computerCard);
+      playerDeck.unshift(playerCard);
+      computerDeck.unshift(computerCard);
     }
   
     res.json({
