@@ -1,4 +1,3 @@
-// server/index.js
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -34,13 +33,21 @@ function initializeDecks() {
 }
 
 app.post('/api/flip', (req, res) => {
-    if (playerDeck.length === 0 || computerDeck.length === 0) {
+    //Checks to see if the game is over
+    if (playerDeck.length === 0) {
       return res.status(400).json({
-        result: 'Game over! One or both decks are empty.',
+        result: 'Game over! You lose!',
         playerDeckCount: playerDeck.length,
         computerDeckCount: computerDeck.length,
       });
     }
+    if (computerDeck.length === 0) {
+        return res.status(400).json({
+          result: 'Game over! You win!',
+          playerDeckCount: playerDeck.length,
+          computerDeckCount: computerDeck.length,
+        });
+      }
   
     const playerCard = playerDeck.pop();
     const computerCard = computerDeck.pop();
@@ -48,10 +55,16 @@ app.post('/api/flip', (req, res) => {
     let result = '';
     if (playerCard.value > computerCard.value) {
       result = 'You win this round!';
+      playerDeck.push(playerCard);
+      playerDeck.push(computerCard);
     } else if (playerCard.value < computerCard.value) {
       result = 'Computer wins this round!';
+      computerDeck.push(playerCard);
+      computerDeck.push(computerCard);
     } else {
       result = 'It’s a tie! War!';
+      playerDeck.push(playerCard);
+      computerDeck.push(computerCard);
     }
   
     res.json({
