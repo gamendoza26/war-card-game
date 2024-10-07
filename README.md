@@ -7,9 +7,8 @@ Welcome to the War Card Game! This project is a simple implementation of the cla
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
 - [Game Rules](#game-rules)
-- [License](#license)
+- [Next Steps](#next-steps)
 
 ## Features
 
@@ -39,7 +38,8 @@ To run this project locally, follow these steps:
    git clone https://github.com/your-username/war-card-game.git
    cd war-card-game
 
-## Next Steps
+## Game Rules
 
+## Next Steps
 - **Ties**: Create a more complicated method for dealing with ties that models the true card game
 - **UI**: Create a UI that is more pleasing the view, with card displays 
