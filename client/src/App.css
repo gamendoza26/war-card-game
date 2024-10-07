@@ -1,0 +1,58 @@
+/* App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; 
+  color: #333;
+  margin: 0;
+  padding: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #2c3e50; /* Darker text color */
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.deck {
+  border: 2px solid #2980b9; /* Card deck border color */
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  width: 50px; /* Card width */
+  height: 100px; /* Card height */
+  background-color: #3498db; /* Card color */
+  border-radius: 0px;
+  margin: 10px auto; /* Center card horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Text color for card */
+  font-size: 1.5em; /* Font size for card text */
+}
+
+.button {
+  padding: 100px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #2980b9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #1a5276; /* Darker shade on hover */
+}
