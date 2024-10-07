@@ -64,7 +64,7 @@ app.post('/api/flip', (req, res) => {
     } else {
       result = 'It’s a tie! War!';
       playerDeck.unshift(playerCard);
-      computerDeck.unshift(computerCard);
+      playerDeck.unshift(computerCard);
     }
   
     res.json({
